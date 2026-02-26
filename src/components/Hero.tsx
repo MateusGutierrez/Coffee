@@ -3,7 +3,8 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
-// import video from '../../public/videos/input-new.mp4'
+import video from '../assets/input.mp4'
+
 const Hero = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
 
@@ -34,7 +35,7 @@ const Hero = () => {
                 end: 'bottom top',
                 scrub: true
             }
-        }).to('.right-leaf', { y: 200}, 0).to('.left-leaf', { y: -200}, 0)
+        }).to('.right-leaf', { y: 200}, 0).to('.left-leaf', { y: -200}, 0).to(".arrow", { y: 100 }, 0);
         const startValue =  isMobile ? 'top 50%' : 'center 60%';
         const endValue = isMobile ? '120% top' : 'bottom top';
         const tl = gsap.timeline({
@@ -59,9 +60,10 @@ const Hero = () => {
         <>
         <section id="hero" className="noisy">
             <h1 className="title">Coffee</h1>
-            <img src="/images/coffee-left.png" alt="coffee-left" className="left-leaf w-50 " />
-            <img src="/images/coffee-right.png" alt="coffee-right" className="right-leaf w-50" />
+            <img src="/images/coffee-left.png" alt="coffee-left" className="left-leaf" />
+            <img src="/images/coffee-right.png" alt="coffee-right" className="right-leaf" />
             <div className="body">
+                {/* <img src="/images/arrow.png" alt="arrow" className="arrow" /> */}
                 <div className="content">
                     <div className="space-y-5 hidden md:block">
                         <p>Cool. Crisp. Classic.</p>
@@ -78,8 +80,8 @@ const Hero = () => {
                 </div>
             </div>
         </section>
-        <div className="video absolute inset-0">
-            {/* <video src={video} muted playsInline preload="auto" ref={videoRef}/> */}
+        <div className="video absolute inset-0 rounded-sm">
+            <video src={video} muted playsInline preload="auto" ref={videoRef} className="rounded-sm"/>
         </div>
         </>
     )
