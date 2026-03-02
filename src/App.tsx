@@ -12,7 +12,6 @@ const App = () => {
     <Navbar/>
     <Hero/>
     <Coffees/>
-    <div className="h-dvh bg-transparent"></div>
    </main>
   );
 }
