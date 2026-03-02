@@ -14,10 +14,10 @@ useGSAP(() => {
     })
     parallaxTimeline
 	 .from('#c-left-leaf', {
-		x: -100, y: 100
+		x: -20,
 	})
 	 .from('#c-right-leaf', {
-		x: 100, y: 100
+		x: 20,
 	})
 })
     return(
