@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import { featureLists, goodLists } from "../constants";
 import gsap from "gsap";
 import { Check } from "lucide-react";
-import under from '/images/under.png';
+import under from '/images/under.jpg';
 const Art = () => {
     const isMobile = useMediaQuery({ maxWidth: 767 });
  
