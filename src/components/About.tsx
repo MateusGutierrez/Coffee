@@ -28,16 +28,16 @@ const About = () => {
 	 <div className="mb-16 md:px-0 px-5">
 		<div className="content">
 		 <div className="md:col-span-8">
-			<p className="badge">Best Cocktails</p>
+			<p className="badge">Premium Coffees</p>
 			<h2>
 			 Where every detail matters <span className="text-white">-</span>
-				from muddle to garnish
+				from bean to cup
 			</h2>
 		 </div>
-		 
+
 		 <div className="sub-content">
 			<p>
-			 Every cocktail we serve is a reflection of our obsession with detail — from the first muddle to the final garnish. That care is what turns a simple drink into something truly memorable.
+			 Every cup we serve is a reflection of our obsession with detail — from the first roast to the final pour. That care is what turns a simple coffee into something truly memorable.
 			</p>
 			
 			<div>

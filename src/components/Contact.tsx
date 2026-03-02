@@ -1,7 +1,7 @@
 import { useGSAP } from '@gsap/react'
 import { SplitText} from 'gsap/all';
 import gsap from 'gsap';
-import { openingHours, socials } from '../constants';
+import { Github, Linkedin } from 'lucide-react';
 
 const Contact = () => {
  	useGSAP(() => {
@@ -31,47 +31,48 @@ const Contact = () => {
  
  return (
 	<footer id="contact">
-	 <img src="/images/footer-right-leaf.png" alt="leaf-right" id="f-right-leaf" />
-	 <img src="/images/footer-left-leaf.png" alt="leaf-left" id="f-left-leaf" />
+	 <img src="/images/footer-right-coffee.png" alt="leaf-right" id="f-right-leaf" className='w-160'/>
+	 <img src="/images/footer-left-coffee.png" alt="leaf-left" id="f-left-leaf" className='w-160' />
 	 
 	 <div className="content">
-		<h2>Where to Find Us</h2>
+		<h2>Where to Find Me</h2>
 		
 		<div>
-		 <h3>Visit Our Bar</h3>
-		 <p>456, Raq Blvd. #404, Los Angeles, CA 90210</p>
+		 <h3>Visit my Linkedin</h3>
+		<p>
+			<a href="https://www.linkedin.com/in/mateus-gutierrez-a991aa1b9/" target="_blank" rel="noopener noreferrer" className='text-yellow'>
+				Mateus Gutierrez
+			</a>
+		</p>
 		</div>
-		
-		<div>
-		 <h3>Contact Us</h3>
-		 <p>(555) 987-6543</p>
-		 <p>hello@jsmcocktail.com</p>
+		<div className='flex items-center justify-center'>
+			<img src="https://avatars.githubusercontent.com/u/118942632?v=4" alt="profile" className='max-w-60 rounded-full'/>
 		</div>
-		
 		<div>
-		 <h3>Open Every Day</h3>
-		 {openingHours.map((time) => (
-			<p key={time.day}>
-			 {time.day} : {time.time}
-			</p>
-		 ))}
+		 <h3>Contact</h3>
+		 <p>mateusgutierrez9@gmail.com</p>
 		</div>
 		
 		<div>
 		 <h3>Socials</h3>
 		 
 		 <div className="flex-center gap-5">
-			{socials.map((social) => (
 			 <a
-			 	key={social.name}
-				href={social.url}
+				href='https://www.linkedin.com/in/mateus-gutierrez-a991aa1b9/'
 				target="_blank"
 				rel="noopener noreferrer"
-				aria-label={social.name}
+				aria-label='LinkedIn'
 			 >
-				<img src={social.icon} />
+				<Linkedin/>
 			 </a>
-			))}
+			  <a
+				href='https://github.com/MateusGutierrez'
+				target="_blank"
+				rel="noopener noreferrer"
+				aria-label='GitHub'
+			 >
+				<Github/>
+			 </a>
 		 </div>
 		</div>
 	 </div>

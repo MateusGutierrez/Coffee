@@ -1,14 +1,14 @@
 const navLinks = [
  {
-	id: "cocktails",
-	title: "Cocktails",
+	id: "coffee",
+	title: "Coffee",
  },
  {
 	id: "about",
 	title: "About Us",
  },
  {
-	id: "work",
+	id: "art",
 	title: "The Art",
  },
  {
@@ -17,57 +17,57 @@ const navLinks = [
  },
 ];
 
-const cocktailLists = [
- {
-	name: "Chapel Hill Shiraz",
-	country: "AU",
-	detail: "Battle",
-	price: "$10",
- },
- {
-	name: "Caten Malbee",
-	country: "AU",
-	detail: "Battle",
-	price: "$49",
- },
- {
-	name: "Rhino Pale Ale",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
- },
- {
-	name: "Irish Guinness",
-	country: "IE",
-	detail: "600 ml",
-	price: "$29",
- },
+const coffeeList = [
+  {
+    name: "Expresso",
+    origin: "Brazil",
+    detail: "30 ml",
+    price: "$6",
+  },
+  {
+    name: "Mochaccino",
+    origin: "Colombia",
+    detail: "With chocolate and steamed milk",
+    price: "$14",
+  },
+  {
+    name: "Frappuccino",
+    origin: "United States",
+    detail: "Iced coffee with milk and blended ice",
+    price: "$18",
+  },
+  {
+    name: "Cappuccino",
+    origin: "Italy",
+    detail: "With steamed milk and foam",
+    price: "$12",
+  },
 ];
 
 const mockTailLists = [
  {
-	name: "Tropical Bloom",
+	name: "Cold Brew",
 	country: "US",
-	detail: "Battle",
+	detail: "350 ml",
+	price: "$8",
+ },
+ {
+	name: "Flat White",
+	country: "AU",
+	detail: "180 ml",
+	price: "$7",
+ },
+ {
+	name: "Ristretto",
+	country: "IT",
+	detail: "20 ml",
+	price: "$5",
+ },
+ {
+	name: "Café Latte",
+	country: "IT",
+	detail: "300 ml",
 	price: "$10",
- },
- {
-	name: "Passionfruit Mint",
-	country: "US",
-	detail: "Battle",
-	price: "$49",
- },
- {
-	name: "Citrus Glow",
-	country: "CA",
-	detail: "750 ml",
-	price: "$20",
- },
- {
-	name: "Lavender Fizz",
-	country: "IE",
-	detail: "600 ml",
-	price: "$29",
  },
 ];
 
@@ -88,16 +88,16 @@ const profileLists = [
 
 const featureLists = [
  "Perfectly balanced blends",
- "Garnished to perfection",
- "Ice-cold every time",
- "Expertly shaken & stirred",
+ "Brewed to perfection",
+ "Fresh-roasted every time",
+ "Expertly ground & brewed",
 ];
 
 const goodLists = [
- "Handpicked ingredients",
- "Signature techniques",
- "Bartending artistry in action",
- "Freshly muddled flavors",
+ "Handpicked single-origin beans",
+ "Signature roasting techniques",
+ "Barista artistry in action",
+ "Freshly ground flavors",
 ];
 
 const storeInfo = {
@@ -116,68 +116,49 @@ const openingHours = [
  { day: "Sun", time: "9:00am – 1am" },
 ];
 
-const socials = [
- {
-	name: "Instagram",
-	icon: "/images/insta.png",
-	url: "#",
- },
- {
-	name: "X (Twitter)",
-	icon: "/images/x.png",
-	url: "#",
- },
- {
-	name: "Facebook",
-	icon: "/images/fb.png",
-	url: "#",
- },
-];
-
 const sliderLists = [
  {
 	id: 1,
-	name: "Classic Mojito",
+	name: "Expresso",
 	image: "/images/drink1-exp.png",
-	title: "Simple Ingredients, Bold Flavor",
+	title: "Pure Intensity in Every Shot",
 	description:
-	 "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
+	 "A small but powerful shot of rich, concentrated coffee with a velvety crema on top. The foundation of all great coffee drinks — bold, smooth, and unmistakably complex.",
  },
  {
 	id: 2,
-	name: "Raspberry Mojito",
+	name: "Mochaccino",
 	image: "/images/drink2-Mochaccino.png",
-	title: "A Zesty Classic That Never Fails",
+	title: "Where Coffee Meets Chocolate",
 	description:
-	 "The Margarita is a classic that balances tangy lime, smooth tequila, and a touch of sweetness. Shaken, frozen, or on the rocks—it’s always crisp & refreshing.",
+	 "A perfect harmony of bold espresso, rich dark chocolate, and silky steamed milk. Indulgent yet balanced, the Mochaccino turns your coffee break into a moment of pure pleasure.",
  },
  {
 	id: 3,
-	name: "Violet Breeze",
+	name: "Violet Frappuccino",
 	image: "/images/drink3-frappuccino.png",
-	title: "Simple Ingredients, Bold Flavor",
+	title: "Chilled to Perfection",
 	description:
-	 "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
+	 "A refreshing blend of espresso, milk, and ice whipped into a smooth and creamy treat. Cool down and indulge in every sip — perfect for warm days or whenever you need a lift.",
  },
  {
 	id: 4,
-	name: "Curacao Mojito",
+	name: "Capucchino",
 	image: "/images/drink4-capucchino.png",
-	title: "Crafted With Care, Poured With Love",
+	title: "The Classic Italian Ritual",
 	description:
-	 "Each cocktail is made with fresh ingredients and a passion for perfecting every pour, whether you're celebrating or simply relaxing.",
+	 "Equal parts espresso, steamed milk, and dense foam — the Cappuccino is a timeless classic. Each cup is a small ceremony, crafted to warm your hands and lift your spirits.",
  },
 ];
 
 export {
  navLinks,
- cocktailLists,
+ coffeeList,
  mockTailLists,
  profileLists,
  featureLists,
  goodLists,
  openingHours,
  storeInfo,
- socials,
  sliderLists,
 };

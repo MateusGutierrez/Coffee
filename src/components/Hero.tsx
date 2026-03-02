@@ -61,22 +61,25 @@ const Hero = () => {
             <h1 className="title">Coffee</h1>
             <img src="/images/coffee-left.png" alt="coffee-left" className="left-leaf" />
             <img src="/images/coffee-right.png" alt="coffee-right" className="right-leaf" />
-            <div className="body">
-                {/* <img src="/images/arrow.png" alt="arrow" className="arrow" /> */}
-                <div className="content">
-                    <div className="space-y-5 hidden md:block">
-                        <p>Cool. Crisp. Classic.</p>
-                        <p className="subtitle">Sip the Spirit<br/>of Summer</p>
-                    </div>
-                    <div className="view-cocktails">
-                        <p className="subtitle">
-                            Every cocktail on our menu is a blend of premium ingredients - designed to delight your senses.
-                        </p>
-                        <a href="#cocktails">
-                            View Cocktails
-                        </a>
-                    </div>
+           <div className="body">
+            <div className="content">
+                <div className="space-y-5 hidden md:block">
+                <p>Rich. Aromatic. Unforgettable.</p>
+                <p className="subtitle">
+                    Awaken Your Senses<br/>
+                    with Every Sip
+                </p>
                 </div>
+
+                <div className="view-cocktails">
+                <p className="subtitle">
+                    Every coffee on our menu is crafted with premium beans and perfectly balanced flavors — made to elevate your daily ritual.
+                </p>
+                <a href="#coffee">
+                    Explore Our Coffees
+                </a>
+                </div>
+            </div>
             </div>
         </section>
         <div className="video absolute inset-0 rounded-sm">

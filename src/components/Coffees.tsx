@@ -1,12 +1,12 @@
 import { useGSAP } from "@gsap/react";
-import { cocktailLists, mockTailLists } from "../constants";
+import { coffeeList, mockTailLists } from "../constants";
 import gsap from "gsap";
 
 const Coffees = () => {
 useGSAP(() => {
     const parallaxTimeline = gsap.timeline({
         scrollTrigger:{
-            trigger: '#cocktails',
+            trigger: '#coffee',
             start: 'top 30%',
             end: 'bottom 80%',
             scrub: true,
@@ -21,18 +21,18 @@ useGSAP(() => {
 	})
 })
     return(
-        <section id="cocktails" className="noisy">
+        <section id="coffee" className="noisy">
             <img src="/images/coffee-left.png" alt="coffee-left" className="left-leaf"  id="c-left-leaf"/>
             <img src="/images/coffee-right.png" alt="coffee-right" className="right-leaf" id="c-right-leaf"/>
             <div className="list">
                 <div className="popular">
                     <h2>Most popular coffees:</h2>
                     <ul>
-                        {cocktailLists.map(({ name, country, detail, price }) => (
+                        {coffeeList.map(({ name, origin, detail, price }) => (
                         <li key={name}>
                             <div className="md:me-28">
                             <h3>{name}</h3>
-                            <p>{country} | {detail}</p>
+                            <p>{origin} | {detail}</p>
                             </div>
                             <span>- {price}</span>
                         </li>
