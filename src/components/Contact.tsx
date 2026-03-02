@@ -2,7 +2,8 @@ import { useGSAP } from '@gsap/react'
 import { SplitText} from 'gsap/all';
 import gsap from 'gsap';
 import { Github, Linkedin } from 'lucide-react';
-
+import footerRightCoffee from '/images/footer-right-coffee.png';
+import footerLeftCoffee from '/images/footer-left-coffee.png';
 const Contact = () => {
  	useGSAP(() => {
 		const titleSplit = SplitText.create('#contact h2', { type: 'words' });
@@ -31,8 +32,8 @@ const Contact = () => {
  
  return (
 	<footer id="contact">
-	 <img src="/images/footer-right-coffee.png" alt="leaf-right" id="f-right-leaf" className='w-160'/>
-	 <img src="/images/footer-left-coffee.png" alt="leaf-left" id="f-left-leaf" className='w-160' />
+	 <img src={footerRightCoffee} alt="leaf-right" id="f-right-leaf" className='w-160'/>
+	 <img src={footerLeftCoffee} alt="leaf-left" id="f-left-leaf" className='w-160' />
 	 
 	 <div className="content">
 		<h2>Where to Find Me</h2>

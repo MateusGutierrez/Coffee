@@ -1,6 +1,11 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { SplitText } from "gsap/all"
+import abt1 from '/images/abt1.jpg';
+import abt2 from '/images/abt2.jpg';
+import abt3 from '/images/abt3.jpg';
+import abt4 from '/images/abt4.jpg';
+import abt5 from '/images/abt5.jpeg';
 
 const About = () => {
      useGSAP(() => {
@@ -55,29 +60,29 @@ const About = () => {
 	 <div className="top-grid">
 		<div className="md:col-span-3">
 		 {/* <div  className="noisy" /> */}
-		 <img src="/images/abt1.jpg" alt="grid-img-1" />
+		 <img src={abt1} alt="grid-img-1" />
 		</div>
 		
 		<div className="md:col-span-6">
 		 {/* <div  className="noisy" /> */}
-		 <img src="/images/abt2.jpg" alt="grid-img-2" />
+		 <img src={abt2} alt="grid-img-2" />
 		</div>
 		
 		<div className="md:col-span-3">
 		 {/* <div  className="noisy" /> */}
-		 <img src="/images/abt5.jpeg" alt="grid-img-5" />
+		 <img src={abt5} alt="grid-img-5" />
 		</div>
 	 </div>
 	 
 	 <div className="bottom-grid">
 		<div className="md:col-span-8">
 		 {/* <div  className="noisy" /> */}
-		 <img src="/images/abt3.jpg" alt="grid-img-3" />
+		 <img src={abt3} alt="grid-img-3" />
 		</div>
 		
 		<div className="md:col-span-4">
 		 {/* <div  className="noisy" /> */}
-		 <img src="/images/abt4.jpg" alt="grid-img-4" />
+		 <img src={abt4} alt="grid-img-4" />
 		</div>
 	 </div>
 	 

@@ -3,7 +3,7 @@ import { useMediaQuery } from "react-responsive";
 import { featureLists, goodLists } from "../constants";
 import gsap from "gsap";
 import { Check } from "lucide-react";
-
+import under from '/images/under.png';
 const Art = () => {
     const isMobile = useMediaQuery({ maxWidth: 767 });
  
@@ -42,7 +42,7 @@ const Art = () => {
 		 
 		 <div className="cocktail-img">
 			<img
-				src="/images/under.jpg"
+				src={under}
 				alt="coffee"
 				className="abs-center masked-img size-full object-contain"
 			/>

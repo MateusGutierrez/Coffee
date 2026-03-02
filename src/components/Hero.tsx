@@ -3,6 +3,7 @@ import gsap from "gsap";
 import { SplitText } from "gsap/all";
 import { useRef } from "react";
 import { useMediaQuery } from "react-responsive";
+import video from '/videos/output.mp4';
 
 const Hero = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
@@ -83,7 +84,7 @@ const Hero = () => {
             </div>
         </section>
         <div className="video absolute inset-0 rounded-sm">
-            <video src="/videos/output.mp4" muted playsInline preload="auto" ref={videoRef} className="rounded-sm"/>
+            <video src={video} muted playsInline preload="auto" ref={videoRef} className="rounded-sm"/>
         </div>
         </>
     )
