@@ -29,7 +29,7 @@ const About = () => {
 	}, '-=0.5')
  })
     return (
-<div id="about">
+<section id="about">
 	 <div className="mb-16 md:px-0 px-5">
 		<div className="content">
 		 <div className="md:col-span-8">
@@ -60,33 +60,29 @@ const About = () => {
 	 <div className="top-grid">
 		<div className="md:col-span-3">
 		 {/* <div  className="noisy" /> */}
-		 <img src={abt1} alt="grid-img-1" />
+		 <img src={abt1} alt="Freshly roasted coffee beans" />
 		</div>
-		
+
 		<div className="md:col-span-6">
-		 {/* <div  className="noisy" /> */}
-		 <img src={abt2} alt="grid-img-2" />
+		 <img src={abt2} alt="Barista preparing a handcrafted espresso" />
 		</div>
-		
+
 		<div className="md:col-span-3">
-		 {/* <div  className="noisy" /> */}
-		 <img src={abt5} alt="grid-img-5" />
+		 <img src={abt5} alt="Coffee shop ambiance" />
 		</div>
 	 </div>
 	 
 	 <div className="bottom-grid">
 		<div className="md:col-span-8">
-		 {/* <div  className="noisy" /> */}
-		 <img src={abt3} alt="grid-img-3" />
+		 <img src={abt3} alt="Latte art being poured into a ceramic cup" />
 		</div>
-		
+
 		<div className="md:col-span-4">
-		 {/* <div  className="noisy" /> */}
-		 <img src={abt4} alt="grid-img-4" />
+		 <img src={abt4} alt="Selection of premium coffee drinks" />
 		</div>
 	 </div>
-	 
-	</div>
+
+	</section>
     )
 }
 export default About;

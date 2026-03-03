@@ -60,8 +60,8 @@ const Hero = () => {
         <>
         <section id="hero" className="noisy">
             <h1 className="title">Coffee</h1>
-            <img src="/images/coffee-left.png" alt="coffee-left" className="left-leaf" />
-            <img src="/images/coffee-right.png" alt="coffee-right" className="right-leaf" />
+            <img src="/images/coffee-left.png" alt="" role="presentation" className="left-leaf" />
+            <img src="/images/coffee-right.png" alt="" role="presentation" className="right-leaf" />
            <div className="body">
             <div className="content">
                 <div className="space-y-5 hidden md:block">

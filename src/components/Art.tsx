@@ -26,7 +26,7 @@ const Art = () => {
 	 .to('#masked-content', { opacity: 1, duration: 1, ease: 'power1.inOut'})
  })
     return (
-<div id="art">
+<section id="art">
 	 <div className="container mx-auto h-full pt-20">
 		<h2 className="will-fade">The ART</h2>
 		
@@ -43,7 +43,7 @@ const Art = () => {
 		 <div className="cocktail-img">
 			<img
 				src={under}
-				alt="coffee"
+				alt="Artisan coffee craftsmanship"
 				className="abs-center masked-img size-full object-contain"
 			/>
 		 </div>
@@ -66,7 +66,7 @@ const Art = () => {
 		 </div>
 		</div>
 	 </div>
-	</div>
+	</section>
     )
 }
 export default Art;

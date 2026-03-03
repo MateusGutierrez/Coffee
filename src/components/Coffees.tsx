@@ -24,8 +24,8 @@ useGSAP(() => {
 })
     return(
         <section id="coffee" className="noisy">
-            <img src={coffeeLeft} alt="coffee-left" className="left-leaf"  id="c-left-leaf"/>
-            <img src={coffeeRight} alt="coffee-right" className="right-leaf" id="c-right-leaf"/>
+            <img src={coffeeLeft} alt="" role="presentation" className="left-leaf" id="c-left-leaf"/>
+            <img src={coffeeRight} alt="" role="presentation" className="right-leaf" id="c-right-leaf"/>
             <div className="list">
                 <div className="popular">
                     <h2>Most popular coffees:</h2>

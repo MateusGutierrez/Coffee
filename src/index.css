@@ -331,7 +331,7 @@ body {
             .details {
                 @apply space-y-5 md:max-w-md text-left;
 
-                h2 {
+                h3 {
                     @apply md:text-5xl text-3xl font-serif;
                 }
 

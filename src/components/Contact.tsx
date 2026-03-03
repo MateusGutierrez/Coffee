@@ -32,8 +32,8 @@ const Contact = () => {
  
  return (
 	<footer id="contact">
-	 <img src={footerRightCoffee} alt="leaf-right" id="f-right-leaf" className='w-160'/>
-	 <img src={footerLeftCoffee} alt="leaf-left" id="f-left-leaf" className='w-160' />
+	 <img src={footerRightCoffee} alt="" role="presentation" id="f-right-leaf" className='w-160'/>
+	 <img src={footerLeftCoffee} alt="" role="presentation" id="f-left-leaf" className='w-160' />
 	 
 	 <div className="content">
 		<h2>Where to Find Me</h2>
