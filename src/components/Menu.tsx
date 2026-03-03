@@ -1,32 +1,29 @@
-import { useCallback, useRef, useState } from 'react'
-import gsap from 'gsap';
-import { sliderLists } from '../constants/index.js';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+import { useCallback, useEffect, useRef, useState } from 'react'
+import gsap from 'gsap'
+import { sliderLists } from '../constants/index.js'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
+import {
+ Carousel,
+ CarouselContent,
+ CarouselItem,
+ type CarouselApi,
+} from '@/components/ui/carousel'
 
 const totalSlides = sliderLists.length;
 
 const Menu = () => {
+ const [api, setApi] = useState<CarouselApi>();
  const [currentIndex, setCurrentIndex] = useState(0);
- const isAnimating = useRef(false);
 
- const imageRef = useRef<HTMLImageElement>(null);
+ const nameRef = useRef<HTMLParagraphElement>(null);
  const detailsHeadingRef = useRef<HTMLHeadingElement>(null);
  const detailsParagraphRef = useRef<HTMLParagraphElement>(null);
- const nameRef = useRef<HTMLParagraphElement>(null);
 
- const animateIn = useCallback(() => {
-	const tl = gsap.timeline({
-	 onComplete: () => { isAnimating.current = false; }
-	});
-
-	tl.fromTo(imageRef.current,
-	 { opacity: 0, xPercent: -30 },
-	 { opacity: 1, xPercent: 0, duration: 0.6, ease: 'power2.out' }
-	);
+ const animateDetailsIn = useCallback(() => {
+	const tl = gsap.timeline();
 	tl.fromTo(nameRef.current,
-	 { opacity: 0 },
-	 { opacity: 1, duration: 0.5 },
-	 '<0.1'
+	 { opacity: 0, yPercent: 20 },
+	 { opacity: 1, yPercent: 0, duration: 0.5, ease: 'power2.out' }
 	);
 	tl.fromTo(detailsHeadingRef.current,
 	 { yPercent: 40, opacity: 0 },
@@ -38,34 +35,26 @@ const Menu = () => {
 	 { yPercent: 0, opacity: 1, duration: 0.5, ease: 'power2.out' },
 	 '<0.15'
 	);
-
-	return tl;
  }, []);
 
- const goToSlide = useCallback((index: number) => {
-	if (isAnimating.current) return;
+ useEffect(() => {
+	if (!api) return;
 
-	const newIndex = (index + totalSlides) % totalSlides;
-	if (newIndex === currentIndex) return;
-
-	isAnimating.current = true;
-
-	const tl = gsap.timeline();
-
-	tl.to(imageRef.current, {
-	 opacity: 0, xPercent: 30, duration: 0.3, ease: 'power2.in'
-	});
-	tl.to([nameRef.current, detailsHeadingRef.current, detailsParagraphRef.current], {
-	 opacity: 0, yPercent: -20, duration: 0.25, ease: 'power2.in'
-	}, '<');
-
-	tl.call(() => {
+	const onSelect = () => {
+	 const newIndex = api.selectedScrollSnap();
 	 setCurrentIndex(newIndex);
-	 requestAnimationFrame(() => {
-		animateIn();
-	 });
-	});
- }, [currentIndex, animateIn]);
+	 animateDetailsIn();
+	};
+
+	api.on('select', onSelect);
+	return () => { api.off('select', onSelect); };
+ }, [api, animateDetailsIn]);
+
+ const goToSlide = useCallback((index: number) => {
+	if (!api) return;
+	const newIndex = (index + totalSlides) % totalSlides;
+	api.scrollTo(newIndex);
+ }, [api]);
 
  const getCocktailAt = (indexOffset: number) => {
 	return sliderLists[(currentIndex + indexOffset + totalSlides) % totalSlides];
@@ -101,7 +90,7 @@ const Menu = () => {
 		})}
 	 </nav>
 
-	 <div className="content" role="group" aria-roledescription="carousel" aria-label="Coffee drinks">
+	 <div className="content">
 		<div className="arrows">
 		 <button
 			className="text-left"
@@ -122,17 +111,26 @@ const Menu = () => {
 		 </button>
 		</div>
 
-		<div className="cocktail" role="group" aria-roledescription="slide" aria-label={`${currentIndex + 1} of ${totalSlides}`}>
-		 <img
-			ref={imageRef}
-			src={currentCocktail.image}
-			alt={`${currentCocktail.name} — ${currentCocktail.title}`}
-			width={400}
-			height={600}
-			loading="lazy"
-			className="object-contain"
-		 />
-		</div>
+		<Carousel
+		 setApi={setApi}
+		 opts={{ loop: true, duration: 25 }}
+		 className="cocktail"
+		>
+		 <CarouselContent>
+			{sliderLists.map((cocktail) => (
+			 <CarouselItem key={cocktail.id} className="flex-center">
+				<img
+				 src={cocktail.image}
+				 alt={`${cocktail.name} — ${cocktail.title}`}
+				 width={400}
+				 height={600}
+				 loading="lazy"
+				 className="object-contain h-[60vh]"
+				/>
+			 </CarouselItem>
+			))}
+		 </CarouselContent>
+		</Carousel>
 
 		<div className="recipe">
 		 <div className="info">

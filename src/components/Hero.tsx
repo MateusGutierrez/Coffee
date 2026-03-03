@@ -1,14 +1,17 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useMediaQuery } from "react-responsive";
-import video from '/videos/output.mp4';
 
 const Hero = () => {
     const videoRef = useRef<HTMLVideoElement>(null);
-
     const isMobile = useMediaQuery({ maxWidth: 767 });
+
+    useEffect(() => {
+        if (!isMobile || !videoRef.current) return;
+        videoRef.current.play().catch(() => {});
+    }, [isMobile]);
 
     useGSAP(() => {
         const heroSplit = new SplitText('.title', { type: 'chars, words'})
@@ -36,8 +39,11 @@ const Hero = () => {
                 scrub: true
             }
         }).to('.right-leaf', { y: 200}, 0).to('.left-leaf', { y: -200}, 0).to(".arrow", { y: 100 }, 0);
-        const startValue =  isMobile ? 'top 50%' : 'center 60%';
-        const endValue = isMobile ? '120% top' : 'bottom top';
+
+        if (isMobile) return;
+
+        const startValue = 'center 60%';
+        const endValue = 'bottom top';
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: 'video',
@@ -55,7 +61,8 @@ const Hero = () => {
                 })
             }
         }
-    }, [])
+    }, [isMobile])
+
     return (
         <>
         <section id="hero" className="noisy">
@@ -84,7 +91,16 @@ const Hero = () => {
             </div>
         </section>
         <div className="video absolute inset-0 rounded-sm">
-            <video src={video} muted playsInline preload="auto" ref={videoRef} className="rounded-sm"/>
+            <video
+                ref={videoRef}
+                src="/videos/output.mp4"
+                muted
+                playsInline
+                autoPlay={isMobile}
+                loop={isMobile}
+                preload="auto"
+                className="rounded-sm"
+            />
         </div>
         </>
     )
